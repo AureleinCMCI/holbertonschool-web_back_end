@@ -1,43 +1,48 @@
-import Currency from './3-currency.js'; // Importation de la classe Currency
+// pricing.js
+import Currency from './3-currency.js';  // Importation de la classe Currency
 
-export default class Pricing{
-    constructor(amount, currency) {
-        if (typeof amount !== "number") {
-          throw new TypeError("amount must be a number");
-        }
-        if (!(currency instanceof Currency)) {
-          throw new TypeError("currency must be an instance of Currency");
-        }
-    
-        this._amount = amount;
-        this._currency = currency;
-}
-get amount() {
+export default class Pricing {
+  constructor(amount, currency) {
+    this.amount = amount;  // Utilisation du setter
+    this.currency = currency;  // Utilisation du setter
+  }
+
+  // Getter pour _amount
+  get amount() {
     return this._amount;
   }
 
-set amount(value) {
+  // Setter pour _amount
+  set amount(value) {
     if (typeof value !== "number") {
       throw new TypeError("amount must be a number");
     }
     this._amount = value;
   }
-get code() {
-    return this._code;
+
+  // Getter pour _currency
+  get currency() {
+    return this._currency;
   }
 
-set code(value) {
-    if (typeof value !== "string") {
-      throw new TypeError("code must be a string");
+  // Setter pour _currency
+  set currency(value) {
+    if (!(value instanceof Currency)) {
+      throw new TypeError("currency must be an instance of Currency");
     }
-    this._code = value;
+    this._currency = value;
   }
+
+  // Méthode pour afficher le prix complet avec la devise
   displayFullPrice() {
     return `${this._amount} ${this._currency._name} (${this._currency._code})`;
   }
+
+  // Méthode statique pour convertir un prix avec un taux de conversion
   static convertPrice(amount, conversionRate) {
     if (typeof amount !== "number" || typeof conversionRate !== "number") {
       throw new TypeError("Both amount and conversionRate must be numbers");
     }
     return amount * conversionRate;
+  }
 }
