@@ -1,14 +1,15 @@
-export default function getResponseFromAPI() {
-    return new Promise((resolve, reject) => {
-      // Simulate an async API call, e.g., fetch or setTimeout
+export default function getResponseFromAPI()
+{
+    return new Promise((resolve, reject) =>
+    {
       setTimeout(() => {
-        const success = true; // or false to simulate an error
+        const success = true;
   
         if (success) {
           resolve('API response data');
         } else {
           reject(new Error('API request failed'));
         }
-      }, 1000); // 1 second delay
+      }, 1000);
     });
-  }
+}
