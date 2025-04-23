@@ -3,6 +3,8 @@
 
 
 import math
+
+
 def floor(n: float) -> int:
     """Retourne le plus grand entier inférieur ou égal à n."""
     return math.floor(n)
