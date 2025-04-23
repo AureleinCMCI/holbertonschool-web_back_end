@@ -3,6 +3,7 @@
 import asyncio
 import random
 
+"""Module that defines an add function with type annotations."""
 
 async def wait_random(max_delay: int = 10) -> float:
     """
