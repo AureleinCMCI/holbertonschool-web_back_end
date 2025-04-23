@@ -3,5 +3,6 @@
 
 
 def sum_list(input_list: list[float]) -> float:
-    """Retourne le plus grand entier inférieur ou égal à n."""
+    """Retourne la somme de tous les éléments de la liste input_list."""
     return sum(input_list)
+
