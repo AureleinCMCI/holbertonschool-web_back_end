@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-"""Module that defines a concat function with type annotations."""
+concat = __import__('1-concat').concat
 
-def concat(str1: str, str2: str) -> str:
-    """Return the concatenation of str1 and str2."""
-    return str1 + str2
+str1 = "egg"
+str2 = "shell"
+
+print(concat(str1, str2) == "{}{}".format(str1, str2))
+print(concat.__annotations__)
