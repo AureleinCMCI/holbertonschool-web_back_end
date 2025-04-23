@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Module pour la fonction floor annotée."""
 
+from typing import Iterable, Sequence, List, Tuple
 
-from typing import Iterable, Any, List, Tuple
 
-
-def element_length(lst: Iterable[Any]) -> List[Tuple[Any, int]]:
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
     return [(i, len(i)) for i in lst]
