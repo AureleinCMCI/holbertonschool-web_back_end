@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """ Coroutine at the same time witha sync """
 import asyncio
-import random
 from typing import List
 
 
