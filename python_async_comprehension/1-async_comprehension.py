@@ -4,11 +4,11 @@
 
 from typing import List
 from typing import Generator
+"""Collecte 10 nombres aléatoires avec une async comprehension"""
 
 
 async_generator = __import__('0-async_generator').async_generator
- 
-        
+
 
 async def async_comprehension() -> List[float]:
     """
