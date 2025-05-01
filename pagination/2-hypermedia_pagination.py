@@ -35,7 +35,7 @@ class Server:
             return []
         else:
             return self.__dataset[i[0]:i[1]]
-        
+
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         ''' Def get hyper '''
         dataset_items = len(self.dataset())
@@ -51,7 +51,8 @@ class Server:
             "total_pages": total_pages
             }
         return p
-        
+
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     ''' Def index range '''
     index = page * page_size - page_size

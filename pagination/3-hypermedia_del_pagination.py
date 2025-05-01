@@ -40,6 +40,8 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """Dataset indexed by sorting position, starting at 0
+        """
         assert type(index) == int
         assert type(page_size) == int
         assert index >= 0
@@ -62,4 +64,3 @@ class Server:
             "page_size": page_size,
             "next_index": next_index
             }
-          
