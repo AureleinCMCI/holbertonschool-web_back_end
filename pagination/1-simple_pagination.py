@@ -1,6 +1,8 @@
+#!/usr/bin/env python3
+''' Simple pagination '''
 import csv
 import math
-from typing import List,Tuple
+from typing import List, Tuple
 
 
 class Server:
@@ -21,25 +23,22 @@ class Server:
             self.__dataset = dataset[1:]
 
         return self.__dataset
-    
-    @staticmethod
-    def index_range(page: int, page_size: int) -> Tuple[int, int]:
-        ''' Def index range '''
-        index = page * page_size - page_size
-        index_1 = index + page_size
-        return (index, index_1)
-    
-    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Retourne une page de données du dataset"""
-        # Vérification des paramètres
-        assert isinstance(page, int) and page > 0, "page doit être un entier > 0"
-        assert isinstance(page_size, int) and page_size > 0, "page_size doit être un entier > 0"
-       # Vérification des limites
-    
-        
-        start_index, end_index = self.index_range(page, page_size)
 
-        if start_index >= len(self.dataset()):
-            return [] 
-        return self.dataset()[start_index:end_index]
-    
+    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        ''' def get page '''
+        assert type(page_size) is int and type(page) is int
+        assert page > 0
+        assert page_size > 0
+        self.dataset()
+        i = index_range(page, page_size)
+        if i[0] >= len(self.__dataset):
+            return []
+        else:
+            return self.__dataset[i[0]:i[1]]
+
+
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    ''' De*f index range '''
+    index = page * page_size - page_size
+    index_1 = index + page_size
+    return (index, index_1)
