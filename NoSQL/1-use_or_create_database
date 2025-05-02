@@ -1,2 +1,2 @@
-// creat db
-use my_db;
+// use daabase my_db
+use my_db
