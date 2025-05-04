@@ -1,0 +1,2 @@
+//Écrivez un script qui supprime tous les documents portant le nom « Holberton school » dans la collection school :
+db.school.deleteMany({name : 'Holberton school'});
