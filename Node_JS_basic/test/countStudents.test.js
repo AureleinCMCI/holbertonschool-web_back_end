@@ -45,3 +45,4 @@ describe('countStudents', () => {
     expect(output).to.deep.include('Number of students in Math: 2. List: Jane, Alice');
   });
 });
+module.exports = countStudents; 
