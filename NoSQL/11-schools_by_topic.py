@@ -7,3 +7,4 @@ def schools_by_topic(mongo_collection, topic):
     cursor = mongo_collection.find({'topic': topic})
     schools = [doc['school'] for doc in cursor if 'school' in doc]
     return schools
+
